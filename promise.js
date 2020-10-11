@@ -1,11 +1,16 @@
 const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve() // Change status to 'fulfilled'
-    }, 2000)
-  })
-  
-  console.log(`Promise before being resolved `, promise);
-  
+  var randomTime = Math.floor(Math.random() * 10000 + 1000);
   setTimeout(() => {
-      console.log(`Promise after being resolved`, promise);
-  }, 3000)
+    resolve(randomTime); // Change status to 'fulfilled'
+  }, randomTime);
+});
+
+// console.log(`Promise before being resolved `, promise);
+
+// setTimeout(() => {
+//   console.log(`Promise after being resolved`, promise);
+// }, 12000);
+
+promise.then(function (value) {
+  console.log(value);
+});
