@@ -8,9 +8,7 @@ function showError() {
   console.error("something went wrong");
 }
 
-function getLocationURL(city, state) {
-  return `https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&appid=ebf3cd3b0e251d6441381b1fcc0ef9b4`;
-}
+function getLocationURL(city, state) {}
 
 function getUser(id) {
   return new Promise(function (resolve, reject) {
@@ -29,8 +27,6 @@ function getWeather(location, successCallback, failureCallback) {
     error: failureCallback,
   });
 }
-
-// ebf3cd3b0e251d6441381b1fcc0ef9b4
 
 document.getElementById("get-user").addEventListener("click", function () {
   getUser(
